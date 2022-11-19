@@ -14,5 +14,27 @@ namespace Tsarst.PopUps
         {
             InitializeComponent();
         }
+
+        private async void OnDisplayAlertButton_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Уведомление", "Простой попап", "Ок");
+        }
+
+        private async void OnDisplayAlertQuestionButton_Clicked(object sender, EventArgs e)
+        {
+            bool result = await DisplayAlert("Вопрос", "Пойти на работу?", "Да", "Нет");
+
+            if (result)
+            {
+                await DisplayAlert("Ответ", "Молодец!", "Ок");
+            }
+        }
+
+        private async void OnDisplayActionSheetButton_Clicked(object sender, EventArgs e)
+        {
+            string action = await DisplayActionSheet("Какой цвет?", null, null, "Красный", "Жёлтый", "Зелёный");
+
+            await DisplayAlert("Результат", action, "ОК");
+        }
     }
 }
