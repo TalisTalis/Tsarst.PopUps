@@ -36,5 +36,18 @@ namespace Tsarst.PopUps
 
             await DisplayAlert("Результат", action, "ОК");
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            string result = await DisplayPromptAsync("Подтверждение",
+                                                    "Идти на работу?",
+                                                    "OK",
+                                                    "Cancel",
+                                                    "Введите текст",
+                                                    initialValue: "",
+                                                    keyboard: Keyboard.Chat);
+
+            await DisplayAlert("Результат", $"Вы ввели: {result}", "OK");
+        }
     }
 }

@@ -12,6 +12,9 @@
 
         <Button Text="Уведомление с action sheet"
                 Clicked="OnDisplayActionSheetButton_Clicked"/>
+
+        <Button Text="Заполнит форму"
+                Clicked="Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>
